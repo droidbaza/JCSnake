@@ -3,14 +3,12 @@ package com.github.droidbaza.jcsnake
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import com.github.droidbaza.jcsnake.ui.SnakeGameRoute
+import com.github.droidbaza.jcsnake.ui.SnakeGameScreen
+import com.github.droidbaza.jcsnake.ui.SnakeViewModel
 import com.github.droidbaza.jcsnake.ui.theme.JCSnakeTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,9 +17,7 @@ class MainActivity : ComponentActivity() {
         val vm = SnakeViewModel()
         setContent {
             JCSnakeTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    SnakeGame(vm)
-                }
+                SnakeGameRoute(vm)
             }
         }
     }
