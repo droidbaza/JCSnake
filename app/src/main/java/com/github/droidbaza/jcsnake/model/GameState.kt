@@ -1,8 +1,5 @@
 package com.github.droidbaza.jcsnake.model
 
-import com.github.droidbaza.jcsnake.model.GameStatus
-import com.github.droidbaza.jcsnake.model.Point
-
 data class GameState(
     val snake: List<Point> = listOf(Point(5, 5)),
     val food: Point = Point(7, 7),

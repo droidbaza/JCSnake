@@ -4,7 +4,6 @@ import com.github.droidbaza.jcsnake.engine.GameEngineImpl
 import com.github.droidbaza.jcsnake.model.Direction
 import com.github.droidbaza.jcsnake.model.GameStatus
 import com.github.droidbaza.jcsnake.model.Point
-import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
