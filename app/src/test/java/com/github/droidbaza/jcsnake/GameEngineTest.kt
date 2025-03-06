@@ -10,7 +10,7 @@ import org.junit.Test
 
 
 class GameEngineTest {
-    private val engine = GameEngineImpl(gridSize = 10)
+    private val engine = GameEngineImpl(gridSize = 10, Direction.LEFT)
 
     @Test
     fun testRunGame() {
@@ -31,10 +31,10 @@ class GameEngineTest {
 
     @Test
     fun testRotate() {
-        engine.rotate(Direction.RIGHT)
-        assertEquals(Direction.RIGHT, engine.state.direction)
+        engine.rotate(Direction.UP)
+        assertEquals(Direction.UP, engine.state.direction)
 
-        engine.rotate(Direction.LEFT)
+        engine.rotate(Direction.RIGHT)
         assertEquals(Direction.RIGHT, engine.state.direction)
 
         engine.rotate(Direction.DOWN)
@@ -65,7 +65,6 @@ class GameEngineTest {
 
     @Test
     fun `rotate should not change direction when opposite`() {
-        engine.rotate(Direction.LEFT)
         engine.rotate(Direction.RIGHT)
         assertEquals((engine.state.direction),Direction.LEFT)
     }

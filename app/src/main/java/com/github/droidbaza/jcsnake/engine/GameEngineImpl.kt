@@ -6,13 +6,13 @@ import com.github.droidbaza.jcsnake.model.GameState
 import com.github.droidbaza.jcsnake.model.GameStatus
 import com.github.droidbaza.jcsnake.model.Point
 
-class GameEngineImpl(val gridSize: Int = 10) : GameEngine {
+class GameEngineImpl(val gridSize: Int = 10,val startDirection: Direction = Direction.RIGHT) : GameEngine {
 
     private val grid = List(gridSize * gridSize) {
         Point(it % gridSize, it / gridSize)
     }
     @VisibleForTesting
-    var _state = GameState(gridSize = gridSize)
+    var _state = GameState(gridSize = gridSize, direction = startDirection)
     override val state: GameState
         get() = _state
 
@@ -80,7 +80,8 @@ class GameEngineImpl(val gridSize: Int = 10) : GameEngine {
         _state = GameState(
             maxScore = state.maxScore,
             gridSize = state.gridSize,
-            status = GameStatus.Running
+            status = GameStatus.Running,
+            direction = startDirection
         )
     }
 
